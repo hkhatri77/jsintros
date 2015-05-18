@@ -88,23 +88,25 @@ console.assert(LCM(3, 6) === 6)
  * - for every number that is a multiple of 3 and 5, return "fizzbuzz"
  */
 
-function fizzbuzz(N) {
-    for (var i = 1; i < 100; i++) {
 
-        if ((i % 3 !== 0) && (i % 5 !== 0)) {
-            return ".";
-        } else if (i % 3 === 0) {
-            return "fizz";
+for (var i = 1; i < 100; i++) {
+    result = " "
+    {
+
+        if (i % 15 === 0) {
+            return (result + "fizzbuzz");
         } else if (i % 5 === 0) {
-            return "buzz";
-        } else if ((i % 5 === 0) && (i % 3 === 0)) {
-            return "fizzbuzz"; 
+            return (result + "buzz");
+        } else if (i % 3 === 0) {
+            return (result + "fizz");
+        } else if ((i % 3 !== 0) && (i % 5 !== 0)) {
+            return (result + ".");
         }
     }
-
 }
 
 console.assert(fizzbuzz(1) === ".")
 console.assert(fizzbuzz(2) === "..")
 console.assert(fizzbuzz(3) === "..fizz")
 console.assert(fizzbuzz(5) === "..fizz.buzz")
+console.assert(fizzbuzz(10) === "..fizz.buzzfizz..fizzfizzbuzz")
