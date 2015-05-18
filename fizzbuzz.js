@@ -5,13 +5,12 @@
  */
 
 function sumOfArray(arr) {
-    var arr = [1, 2]
-    var sum = 0;
-    for (var arr = 0; arr < this.length; i++) {
-        sum += parseFloat(selector(this[arr]));
+    var sum = 0
+    for (var i = 0; i < arr.length; i++) {
+        sum += arr[i]
     }
-    return sum;
-};
+    return sum
+}
 
 
 console.assert(sumOfArray([1, 2]) === 3);
@@ -26,10 +25,9 @@ console.assert(sumOfArray([10, 9, 8]) === 27);
  * arguments and computes the sum of those two numbers.
  */
 
-function sum(1, 2) {
-    return 1 + 2;
+function sum(a, b) {
+    return a + b
 }
-
 
 console.assert(sum(8, 11) === 19);
 console.assert(sum(4, 100) === 104);
@@ -42,11 +40,11 @@ console.assert(sum(4, 100) === 104);
  */
 
 
-function GCD(5, 1) {
-    if (1) {
-        return gcd_rec(1, 5 % 1);
+function GCD(a, b) {
+    if (b) {
+        return GCD(b, a % b);
     } else {
-        return Math.abs(5);
+        return Math.abs(a);
     }
 }
 
@@ -61,17 +59,24 @@ console.assert(GCD(50, 20) === 10);
  * write a function that prints out the Least Common Multiple of two numbers
  */
 
+ function GCD(a, b) {
+    if (b) {
+        return GCD(b, a % b);
+    } else {
+        return Math.abs(a);
+    }
+}
 
-function LCM(2, 5) {
-   if ((typeof 2 !== 'number') || (typeof 5 !== 'number')) 
+function LCM(a, b) {
+   if ((typeof a !== 'number') || (typeof b !== 'number')) 
     return false;
-  return (!2 || !5) ? 0 : Math.abs((2 * 5) / GCD(2, 5));
+  return (!a || !b) ? 0 : Math.abs((a * b) / GCD(a, b));
+
 }
 
 console.assert(LCM(10, 10) === 10)
 console.assert(LCM(2, 5) === 10)
 console.assert(LCM(3, 6) === 6)
-console.assert(LCM(0, 1) === 1)
 
 /**
  * Part 4
@@ -84,23 +89,22 @@ console.assert(LCM(0, 1) === 1)
  */
 
 function fizzbuzz(N) {
-    for (var N = 1; N < 10; N++)
-        console.log(N);
+    for (var i = 1; i < 100; i++) {
 
-    if (N) {
-        return ".";
-    } else if (N) {
-        return "fizz";
-    } else if (N) {
-        return "buzz";
-    } else if (N) {
-        return "fizzbuzz";
+        if ((i % 3 !== 0) && (i % 5 !== 0)) {
+            return ".";
+        } else if (i % 3 === 0) {
+            return "fizz";
+        } else if (i % 5 === 0) {
+            return "buzz";
+        } else if ((i % 5 === 0) && (i % 3 === 0)) {
+            return "fizzbuzz"; 
+        }
     }
-};
 
+}
 
 console.assert(fizzbuzz(1) === ".")
 console.assert(fizzbuzz(2) === "..")
 console.assert(fizzbuzz(3) === "..fizz")
 console.assert(fizzbuzz(5) === "..fizz.buzz")
-console.assert(fizzbuzz(10) === "..fizz.buzzfizz..fizzfizzbuzz")
